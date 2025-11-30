@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1><span class="material-icons logo-icon">bolt</span> Smart Task Analyzer</h1>
+    <p>AI-inspired priority scoring for tasks based on urgency, dependencies, effort & importance.</p>
+
+    <!-- Dark mode toggle -->
+    <button id="themeToggle" class="theme-btn">
+        <span class="material-icons">dark_mode</span>
+    </button>
+</header>
+
+<main>
+
+    <!-- Input Card -->
+    <section class="card glass">
+        <h2><span class="material-icons">edit_note</span> Add Task</h2>
+
+        <div class="row">
+            <input id="title" placeholder="Task Title">
+            <input id="due_date" type="date">
+            <input id="estimated_hours" type="number" placeholder="Hours">
+            <input id="importance" type="number" placeholder="Importance (1-10)">
+            <input id="dependencies" placeholder="Dependencies e.g. 1,4">
+        </div>
+
+        <button class="btn primary" id="addTaskBtn">
+            <span class="material-icons">add_circle</span> Add Task
+        </button>
+
+        <h3>Or Paste JSON</h3>
+        <textarea id="bulkInput"></textarea>
+
+        <label>Select Strategy:</label>
+        <select id="strategy">
+            <option value="smart">Smart Balanced</option>
+            <option value="fastest">Fastest First</option>
+            <option value="impact">High Impact</option>
+            <option value="deadline">Deadline Driven</option>
+        </select>
+
+        <button class="btn analyze" id="analyzeBtn">
+            <span class="material-icons">analytics</span> Analyze
+        </button>
+
+        <!-- Loader animation -->
+        <div id="loader" class="loader hidden"></div>
+    </section>
+
+    <!-- Results -->
+    <section class="card glass">
+        <h2><span class="material-icons">fact_check</span> Results</h2>
+        <div id="results" class="draggable-list"></div>
+
+        <button id="exportPDF" class="btn export">
+            <span class="material-icons">picture_as_pdf</span> Export to PDF
+        </button>
+    </section>
+
+    <!-- Chart -->
+    <section class="card glass">
+        <h2><span class="material-icons">bar_chart</span> Priority Graph</h2>
+        <canvas id="priorityChart"></canvas>
+    </section>
+
+</main>
+
+<footer>Smart Task Analyzer © 2025</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

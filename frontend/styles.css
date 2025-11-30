@@ -1,0 +1,103 @@
+/* GLOBAL */
+body {
+    font-family: "Segoe UI";
+    margin: 0;
+    transition: 0.3s;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.dark {
+    background: #111;
+    color: #eee;
+}
+
+header {
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.theme-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 26px;
+}
+
+.card.glass {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 25px 0;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.row input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+textarea, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn.primary { background: #00b4d8; }
+.btn.analyze { background: #38b000; width: 100%; }
+.btn.export { background: #ffa500; width: 100%; }
+
+/* Loader */
+.loader {
+    border: 6px solid rgba(255,255,255,0.3);
+    border-top: 6px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+.hidden { display: none; }
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Task cards */
+.task-card {
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    animation: fadeIn 0.4s ease;
+    cursor: grab;
+}
+
+.high { background: #e63946; }
+.medium { background: #ffca3a; color: #222; }
+.low { background: #2ecc71; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
