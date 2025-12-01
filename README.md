@@ -147,3 +147,17 @@ ML-based learning system
 Calendar & email integrations
 Drag-and-drop UI for tasks
 Real-time collaboration
+
+TECH STACK SUMMARY
+
+Backend:
+Python, Django, Django REST Framework, SQLite, CORS Headers
+
+Frontend:
+HTML, CSS, JavaScript, Chart.js
+
+Architecture:
+Strategy Pattern, Factory Pattern, DFS Cycle Detection, REST API
+
+Tools:
+VS Code, Git, GitHub, Live Server, Virtual Environment
